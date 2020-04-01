@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import User from "./components/user.component";
+import Recovery from "./components/recovery.component";
 
 const initialState = {
   auth: false,
@@ -75,6 +76,7 @@ function App() {
                 <Route path="/login" component={Login} />
                 <Route path="/sign-up" component={SignUp} />
                 <Route path="/user" component={User} />
+                <Route path="/recovery-password" component={Recovery} />
               </Switch>
             </div>
           </div>

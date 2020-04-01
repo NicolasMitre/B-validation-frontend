@@ -4,18 +4,37 @@ export const getUsers = async username => {
   return users;
 };
 
-export const sendForm = async () => {
+export const sendMail = async email => {
   const response = await fetch("http://localhost:5000/api/recovery", {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({})
+    body: JSON.stringify({
+      email: email
+    })
   });
   if (response.status === 401) {
     console.log("No estás autorizado");
   }
+  return response;
+};
+
+export const passwordRecovered = async (email, password, token) => {
+  const response = await fetch("http://localhost:5000/api/recovered", {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+      resetCode: token
+    })
+  });
+
   return response;
 };
 

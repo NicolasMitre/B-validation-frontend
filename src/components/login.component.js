@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { loginUser } from "../services/calls";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Login extends Component {
   onSubmit = async e => {
@@ -65,12 +65,12 @@ class Login extends Component {
         <button type="submit" className="btn btn-primary btn-block">
           Submit
         </button>
-        {/* {<p className="forgot-password text-right">
-          {Forgot <a href="#">password?</a> 
-          const email = { nombre: mensaje.id, password: mensaje.username };
-          sendEmail(email);
-  }
-        </p>} */}
+        <p className="forgot-password text-right">
+          Forgot{" "}
+          <Link className="navbar-brand" to={"/recovery-password"}>
+            password?
+          </Link>
+        </p>
       </form>
     );
   }

@@ -13,7 +13,7 @@ class User extends Component {
     if (!this.props.auth) {
       return <Redirect to={"/"} />;
     }
-    return <p> {this.props.token} </p>;
+    return <p> This is your token actual: {this.props.token} </p>;
   }
 }
 
